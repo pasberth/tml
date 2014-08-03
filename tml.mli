@@ -7,6 +7,7 @@ val simple :
   [> `Html ] Html5.M.elt
 val mktoc :
   ?prefix:string ->
+  ?a:[< Html5_types.ul_attrib ] Html5.M.attrib list ->
   'a Html5.M.elt -> 'a Html5.M.elt * [> Html5_types.ul ] Html5.M.elt
 val ul :
   [< Html5_types.li_content_fun ] Html5.M.elt Html5.M.list_wrap list ->

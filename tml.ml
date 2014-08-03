@@ -37,7 +37,7 @@ let rec toc_to_elt = function
                       | Toc (_, elt, []) -> Xml.node "li" (mk_elt elt)
                       | Toc (_, elt, tocs) -> Xml.node "li" (List.append (mk_elt elt) [Xml.node "ul" (List.map toc_to_elt (List.rev tocs))])
 
-let mktoc_xml xml =
+let mktoc_xml a xml =
   let tocs = ref [] in
   let level = function
               | "h1" -> 1
@@ -70,15 +70,18 @@ let mktoc_xml xml =
                                 | _-> ()
                               )
                           n) xml;
-  Xml.node "ul" (List.map toc_to_elt (List.rev !tocs))
+  Xml.node "ul" ~a:a (List.map toc_to_elt (List.rev !tocs))
 
-let mktoc ?prefix html =
+let mktoc ?prefix ?a html =
   let prefix = match prefix with
                 | Some prefix -> prefix
                 | None -> "toc" in
+  let a = match a with
+          | Some a -> Html5.M.to_xmlattribs a
+          | None -> [] in
   let xml = Html5.M.toelt html in
   let xml = mkid_xml prefix xml in
-  (Html5.M.tot xml, Html5.M.tot (mktoc_xml xml))
+  (Html5.M.tot xml, Html5.M.tot (mktoc_xml a xml))
 
 let ul l = Html5.M.ul (List.map Html5.M.li l)
 
