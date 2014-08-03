@@ -83,15 +83,16 @@ let mktoc ?prefix ?a html =
   let xml = mkid_xml prefix xml in
   (Html5.M.tot xml, Html5.M.tot (mktoc_xml a xml))
 
-let ul l = Html5.M.ul (List.map Html5.M.li l)
+let ul ?a l = Html5.M.ul ?a (List.map Html5.M.li l)
 
-let ulS l = ul (List.map (fun x -> [pcdata x]) l)
+let ulS ?a l = ul ?a (List.map (fun x -> [pcdata x]) l)
 
-let ol l = Html5.M.ol (List.map Html5.M.li l)
+let ol ?a l = Html5.M.ol ?a (List.map Html5.M.li l)
 
-let olS l = ol (List.map (fun x -> [pcdata x]) l)
+let olS ?a l = ol ?a (List.map (fun x -> [pcdata x]) l)
 
-let tablen heads columns = Html5.M.table
+let tablen ?a heads columns = Html5.M.table
+                              ?a
                               ~thead:
                                 (Html5.M.thead
                                   [Html5.M.tr
@@ -129,29 +130,29 @@ let tupleToList18 (x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x
 let tupleToList19 (x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18) = [x0; x1; x2; x3; x4; x5; x6; x7; x8; x9; x10; x11; x12; x13; x14; x15; x16; x17; x18]
 let tupleToList20 (x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16, x17, x18, x19) = [x0; x1; x2; x3; x4; x5; x6; x7; x8; x9; x10; x11; x12; x13; x14; x15; x16; x17; x18; x19]
 
-let table1 heads columns = tablen (tupleToList1 heads) (List.map tupleToList1 columns)
-let table2 heads columns = tablen (tupleToList2 heads) (List.map tupleToList2 columns)
-let table3 heads columns = tablen (tupleToList3 heads) (List.map tupleToList3 columns)
-let table4 heads columns = tablen (tupleToList4 heads) (List.map tupleToList4 columns)
-let table5 heads columns = tablen (tupleToList5 heads) (List.map tupleToList5 columns)
-let table6 heads columns = tablen (tupleToList6 heads) (List.map tupleToList6 columns)
-let table7 heads columns = tablen (tupleToList7 heads) (List.map tupleToList7 columns)
-let table8 heads columns = tablen (tupleToList8 heads) (List.map tupleToList8 columns)
-let table9 heads columns = tablen (tupleToList9 heads) (List.map tupleToList9 columns)
-let table10 heads columns = tablen (tupleToList10 heads) (List.map tupleToList10 columns)
-let table11 heads columns = tablen (tupleToList10 heads) (List.map tupleToList11 columns)
-let table12 heads columns = tablen (tupleToList10 heads) (List.map tupleToList12 columns)
-let table13 heads columns = tablen (tupleToList10 heads) (List.map tupleToList13 columns)
-let table14 heads columns = tablen (tupleToList10 heads) (List.map tupleToList14 columns)
-let table15 heads columns = tablen (tupleToList10 heads) (List.map tupleToList15 columns)
-let table16 heads columns = tablen (tupleToList10 heads) (List.map tupleToList16 columns)
-let table17 heads columns = tablen (tupleToList10 heads) (List.map tupleToList17 columns)
-let table18 heads columns = tablen (tupleToList10 heads) (List.map tupleToList18 columns)
-let table19 heads columns = tablen (tupleToList10 heads) (List.map tupleToList19 columns)
-let table20 heads columns = tablen (tupleToList10 heads) (List.map tupleToList20 columns)
+let table1 ?a heads columns = tablen ?a (tupleToList1 heads) (List.map tupleToList1 columns)
+let table2 ?a heads columns = tablen ?a (tupleToList2 heads) (List.map tupleToList2 columns)
+let table3 ?a heads columns = tablen ?a (tupleToList3 heads) (List.map tupleToList3 columns)
+let table4 ?a heads columns = tablen ?a (tupleToList4 heads) (List.map tupleToList4 columns)
+let table5 ?a heads columns = tablen ?a (tupleToList5 heads) (List.map tupleToList5 columns)
+let table6 ?a heads columns = tablen ?a (tupleToList6 heads) (List.map tupleToList6 columns)
+let table7 ?a heads columns = tablen ?a (tupleToList7 heads) (List.map tupleToList7 columns)
+let table8 ?a heads columns = tablen ?a (tupleToList8 heads) (List.map tupleToList8 columns)
+let table9 ?a heads columns = tablen ?a (tupleToList9 heads) (List.map tupleToList9 columns)
+let table10 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList10 columns)
+let table11 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList11 columns)
+let table12 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList12 columns)
+let table13 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList13 columns)
+let table14 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList14 columns)
+let table15 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList15 columns)
+let table16 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList16 columns)
+let table17 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList17 columns)
+let table18 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList18 columns)
+let table19 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList19 columns)
+let table20 ?a heads columns = tablen ?a (tupleToList10 heads) (List.map tupleToList20 columns)
 
 
-let tableSn heads columns = tablen
+let tableSn ?a heads columns = tablen ?a
                               (List.map (fun head -> [pcdata head]) heads)
                               (List.map
                                 (fun cells
@@ -160,23 +161,23 @@ let tableSn heads columns = tablen
                                         -> [pcdata cell])
                                       cells)
                                 columns)
-let tableS1 heads columns = tableSn (tupleToList1 heads) (List.map tupleToList1 columns)
-let tableS2 heads columns = tableSn (tupleToList2 heads) (List.map tupleToList2 columns)
-let tableS3 heads columns = tableSn (tupleToList3 heads) (List.map tupleToList3 columns)
-let tableS4 heads columns = tableSn (tupleToList4 heads) (List.map tupleToList4 columns)
-let tableS5 heads columns = tableSn (tupleToList5 heads) (List.map tupleToList5 columns)
-let tableS6 heads columns = tableSn (tupleToList6 heads) (List.map tupleToList6 columns)
-let tableS7 heads columns = tableSn (tupleToList7 heads) (List.map tupleToList7 columns)
-let tableS8 heads columns = tableSn (tupleToList8 heads) (List.map tupleToList8 columns)
-let tableS9 heads columns = tableSn (tupleToList9 heads) (List.map tupleToList9 columns)
-let tableS10 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList10 columns)
-let tableS11 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList11 columns)
-let tableS12 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList12 columns)
-let tableS13 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList13 columns)
-let tableS14 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList14 columns)
-let tableS15 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList15 columns)
-let tableS16 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList16 columns)
-let tableS17 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList17 columns)
-let tableS18 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList18 columns)
-let tableS19 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList19 columns)
-let tableS20 heads columns = tableSn (tupleToList10 heads) (List.map tupleToList20 columns)
+let tableS1 ?a heads columns = tableSn ?a (tupleToList1 heads) (List.map tupleToList1 columns)
+let tableS2 ?a heads columns = tableSn ?a (tupleToList2 heads) (List.map tupleToList2 columns)
+let tableS3 ?a heads columns = tableSn ?a (tupleToList3 heads) (List.map tupleToList3 columns)
+let tableS4 ?a heads columns = tableSn ?a (tupleToList4 heads) (List.map tupleToList4 columns)
+let tableS5 ?a heads columns = tableSn ?a (tupleToList5 heads) (List.map tupleToList5 columns)
+let tableS6 ?a heads columns = tableSn ?a (tupleToList6 heads) (List.map tupleToList6 columns)
+let tableS7 ?a heads columns = tableSn ?a (tupleToList7 heads) (List.map tupleToList7 columns)
+let tableS8 ?a heads columns = tableSn ?a (tupleToList8 heads) (List.map tupleToList8 columns)
+let tableS9 ?a heads columns = tableSn ?a (tupleToList9 heads) (List.map tupleToList9 columns)
+let tableS10 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList10 columns)
+let tableS11 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList11 columns)
+let tableS12 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList12 columns)
+let tableS13 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList13 columns)
+let tableS14 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList14 columns)
+let tableS15 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList15 columns)
+let tableS16 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList16 columns)
+let tableS17 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList17 columns)
+let tableS18 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList18 columns)
+let tableS19 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList19 columns)
+let tableS20 ?a heads columns = tableSn ?a (tupleToList10 heads) (List.map tupleToList20 columns)

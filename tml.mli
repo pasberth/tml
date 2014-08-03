@@ -10,14 +10,21 @@ val mktoc :
   ?a:[< Html5_types.ul_attrib ] Html5.M.attrib list ->
   'a Html5.M.elt -> 'a Html5.M.elt * [> Html5_types.ul ] Html5.M.elt
 val ul :
+  ?a:[< Html5_types.ul_attrib ] Html5.M.attrib list ->
   [< Html5_types.li_content_fun ] Html5.M.elt Html5.M.list_wrap list ->
   [> Html5_types.ul ] Html5.M.elt
-val ulS : string list -> [> Html5_types.ul ] Html5.M.elt
+val ulS :
+  ?a:[< Html5_types.ul_attrib ] Html5.M.attrib list ->
+  string list -> [> Html5_types.ul ] Html5.M.elt
 val ol :
+  ?a:[< Html5_types.ol_attrib ] Html5.M.attrib list ->
   [< Html5_types.li_content_fun ] Html5.M.elt Html5.M.list_wrap list ->
   [> Html5_types.ol ] Html5.M.elt
-val olS : string list -> [> Html5_types.ol ] Html5.M.elt
+val olS :
+  ?a:[< Html5_types.ol_attrib ] Html5.M.attrib list ->
+  string list -> [> Html5_types.ol ] Html5.M.elt
 val tablen :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   [< Html5_types.td_content_fun ] Html5.M.elt Html5.M.list_wrap list ->
   [< Html5_types.td_content_fun ] Html5.M.elt Html5.M.list_wrap list list ->
   [> Html5_types.table ] Html5.M.elt
@@ -60,22 +67,26 @@ val tupleToList20 :
   'a * 'a * 'a * 'a * 'a * 'a * 'a * 'a * 'a * 'a * 'a * 'a * 'a * 'a * 'a *
   'a * 'a * 'a * 'a * 'a -> 'a list
 val table1 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   [< Html5_types.td_content_fun ] Html5.M.elt Html5.M.list_wrap ->
   [< Html5_types.td_content_fun ] Html5.M.elt Html5.M.list_wrap list ->
   [> Html5_types.table ] Html5.M.elt
 val table2 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap ->
   (([< Html5_types.td_content_fun ] as 'b) Html5.M.elt Html5.M.list_wrap *
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table3 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap ->
   (([< Html5_types.td_content_fun ] as 'b) Html5.M.elt Html5.M.list_wrap *
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table4 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap ->
@@ -84,6 +95,7 @@ val table4 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table5 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap ->
@@ -92,6 +104,7 @@ val table5 :
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table6 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -102,6 +115,7 @@ val table6 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table7 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -112,6 +126,7 @@ val table7 :
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table8 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -124,6 +139,7 @@ val table8 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table9 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -136,6 +152,7 @@ val table9 :
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table10 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -150,6 +167,7 @@ val table10 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table11 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -164,6 +182,7 @@ val table11 :
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table12 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -179,6 +198,7 @@ val table12 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table13 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -194,6 +214,7 @@ val table13 :
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table14 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -210,6 +231,7 @@ val table14 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table15 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -226,6 +248,7 @@ val table15 :
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table16 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -243,6 +266,7 @@ val table16 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table17 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -260,6 +284,7 @@ val table17 :
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table18 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -278,6 +303,7 @@ val table18 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table19 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -296,6 +322,7 @@ val table19 :
    'b Html5.M.elt Html5.M.list_wrap * 'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val table20 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   ([< Html5_types.td_content_fun ] as 'a) Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
   'a Html5.M.elt Html5.M.list_wrap * 'a Html5.M.elt Html5.M.list_wrap *
@@ -315,83 +342,102 @@ val table20 :
    'b Html5.M.elt Html5.M.list_wrap)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableSn :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string list -> string list list -> [> Html5_types.table ] Html5.M.elt
-val tableS1 : string -> string list -> [> Html5_types.table ] Html5.M.elt
+val tableS1 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
+  string -> string list -> [> Html5_types.table ] Html5.M.elt
 val tableS2 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string ->
   (string * string) list -> [> Html5_types.table ] Html5.M.elt
 val tableS3 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string ->
   (string * string * string) list -> [> Html5_types.table ] Html5.M.elt
 val tableS4 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string ->
   (string * string * string * string) list ->
   [> Html5_types.table ] Html5.M.elt
 val tableS5 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string ->
   (string * string * string * string * string) list ->
   [> Html5_types.table ] Html5.M.elt
 val tableS6 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string ->
   (string * string * string * string * string * string) list ->
   [> Html5_types.table ] Html5.M.elt
 val tableS7 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string ->
   (string * string * string * string * string * string * string) list ->
   [> Html5_types.table ] Html5.M.elt
 val tableS8 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string ->
   (string * string * string * string * string * string * string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS9 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string ->
   (string * string * string * string * string * string * string * string *
    string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS10 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
    string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS11 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
    string * string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS12 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
    string * string * string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS13 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
    string * string * string * string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS14 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
    string * string * string * string * string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS15 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
    string * string * string * string * string * string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS16 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
    string * string * string * string * string * string * string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS17 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
@@ -399,6 +445,7 @@ val tableS17 :
    string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS18 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
@@ -406,6 +453,7 @@ val tableS18 :
    string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS19 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
@@ -413,6 +461,7 @@ val tableS19 :
    string * string * string)
   list -> [> Html5_types.table ] Html5.M.elt
 val tableS20 :
+  ?a:[< Html5_types.table_attrib ] Html5.M.attrib list ->
   string * string * string * string * string * string * string * string *
   string * string ->
   (string * string * string * string * string * string * string * string *
